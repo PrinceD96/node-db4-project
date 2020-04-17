@@ -9,11 +9,7 @@ exports.up = function (knex) {
 			tbl.string("recipe_name", 128).notNullable();
 		})
 		.createTable("steps", tbl => {
-			tbl
-				.integer("recipe_id")
-				.unsigned()
-				.notNullable()
-				.references("recipes.id");
+			tbl.integer("recipe_id").unsigned().notNullable();
 			tbl.float("step_number");
 			tbl.string("instructions").notNullable();
 		})
